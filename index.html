@@ -1,0 +1,718 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nuquí, sabores que cuentan historias · Fora Visual</title>
+<meta name="description" content="Propuesta creativa y de producción audiovisual para Lucy Klinger: cinco cortometrajes documentales sobre la cocina, la cultura y el territorio de Nuquí.">
+<link rel="icon" href="assets/web/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=DM+Sans:wght@400;500;700&family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800&display=swap" rel="stylesheet">
+<style>
+:root{--serif:'Fraunces',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;--hand:'Caveat','Segoe Script',cursive;
+  --cream:#F4EBDD;--sand:#E9DDC4;--earth:#2A1A12;--sea:#0E3B43;--jungle:#1F5B3A;--achiote:#C2461A;--yellow:#FCC200;--paper:#FFF6EA}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font:400 clamp(1rem,.95rem + .25vw,1.125rem)/1.7 var(--sans);background:#000;color:var(--cream);overflow-x:clip;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{display:block;max-width:100%}
+section{position:relative;padding:clamp(5rem,13vh,9rem) 0;background:linear-gradient(180deg,var(--from,var(--bg)),var(--bg) 26vh);color:var(--fg)}
+.wrap{width:min(1180px,100% - clamp(2rem,10vw,6rem));margin-inline:auto}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.02;letter-spacing:-.02em;font-variation-settings:'opsz' 144}
+h2{font-size:clamp(2.2rem,5.4vw,4.6rem)}
+h3.lab{font:700 .78rem/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--ac);margin:3.2rem 0 1.1rem;display:flex;align-items:center;gap:.8rem}
+h3.lab::after{content:"";flex:1;height:1px;background:currentColor;opacity:.35}
+p+p{margin-top:1em}
+.kicker{font:700 .78rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--ac);margin-bottom:1.4rem}
+.hand{font-family:var(--hand);font-weight:700;color:var(--ac)}
+em{font-style:italic;color:var(--ac)}
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.14em;margin-bottom:-.14em}
+.w>span{display:inline-block}
+
+/* header */
+header.bar{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:1rem clamp(1rem,4vw,2.5rem);color:var(--cream);transition:color .4s;pointer-events:none}
+header.bar>*{pointer-events:auto}
+header.bar::before{content:"";position:absolute;inset:0 0 -1.4rem 0;z-index:-1;background:linear-gradient(rgba(8,8,8,.55),transparent);pointer-events:none}
+header.bar.light::before{background:linear-gradient(rgba(244,235,221,.85),transparent)}
+header.bar.light{color:var(--earth)}
+.logo img{height:clamp(18px,2.2vw,26px);width:auto;transition:filter .4s}
+header.bar.light .logo img{filter:invert(1)}
+#snd{display:flex;align-items:center;gap:.7rem;font:700 .74rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:inherit;background:transparent;border:1.5px solid currentColor;border-radius:99px;padding:.65rem 1rem;cursor:pointer;transition:background .3s,color .3s}
+#snd:hover{background:currentColor}
+#snd:hover .lbl{color:var(--invert,#000);mix-blend-mode:normal}
+#snd .bars{display:flex;gap:2px;align-items:center;height:14px}
+#snd .bars i{width:3px;height:4px;background:currentColor;border-radius:2px}
+#snd[aria-pressed=true] .bars i{animation:eq .9s ease-in-out infinite}
+#snd[aria-pressed=true] .bars i:nth-child(2){animation-delay:-.3s}
+#snd[aria-pressed=true] .bars i:nth-child(3){animation-delay:-.6s}
+@keyframes eq{0%,100%{height:3px}50%{height:14px}}
+#hint{position:fixed;top:4rem;right:clamp(1rem,4vw,2.5rem);z-index:50;font:700 1.35rem/1 var(--hand);background:var(--yellow);color:#000;padding:.5rem .9rem;border-radius:.8rem;transform:rotate(-3deg);transition:opacity .5s;animation:nudge 2s ease-in-out infinite}
+#hint::before{content:"";position:absolute;top:-6px;right:2rem;border:6px solid transparent;border-top:0;border-bottom-color:var(--yellow)}
+@keyframes nudge{50%{transform:rotate(-3deg) translateY(-4px)}}
+#fuse{position:fixed;top:0;left:0;height:3px;width:0;background:var(--yellow);z-index:60}
+#ember{position:fixed;top:-4px;left:0;width:11px;height:11px;border-radius:50%;background:#fff;box-shadow:0 0 12px 4px var(--yellow),0 0 26px 8px var(--achiote);z-index:60;transform:translateX(-50%)}
+
+/* hero */
+#hero{min-height:100svh;display:flex;align-items:center;padding:7rem 0 14rem;overflow:hidden;background:linear-gradient(180deg,#06191d 0%,#0E3B43 42%,#1d6a68 70%,#e8893a 100%);color:var(--cream);--ac:var(--yellow)}
+#hero h1{font-size:clamp(3.2rem,11vw,10rem);font-weight:700;position:relative;z-index:3}
+#hero h1 .l{display:block}
+.eyebrow{font:500 clamp(.8rem,1.4vw,1rem)/1.5 var(--sans);letter-spacing:.14em;text-transform:uppercase;margin-bottom:2rem;max-width:34rem;position:relative;z-index:3;opacity:.9}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:2.6rem;position:relative;z-index:3}
+.chips span{border:1.5px solid rgba(244,235,221,.55);border-radius:99px;padding:.45rem 1rem;font-size:.9rem;backdrop-filter:blur(4px)}
+.sun{position:absolute;left:64%;bottom:15%;width:clamp(200px,38vmin,460px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#FFE08A 0,#FCC200 40%,rgba(252,194,0,0) 70%);z-index:1}
+.steam{position:absolute;inset:auto 0 12% 0;height:60%;z-index:2;pointer-events:none}
+.steam i{position:absolute;bottom:0;width:90px;height:220px;border-radius:50%;background:radial-gradient(closest-side,rgba(255,255,255,.28),transparent);filter:blur(22px);opacity:0;animation:rise 11s ease-in infinite}
+.steam i:nth-child(1){left:8%}.steam i:nth-child(2){left:24%;animation-delay:-3s}.steam i:nth-child(3){left:46%;animation-delay:-6s}.steam i:nth-child(4){left:68%;animation-delay:-2s}.steam i:nth-child(5){left:85%;animation-delay:-8s}
+@keyframes rise{0%{transform:translateY(40px) scaleX(.6);opacity:0}25%{opacity:.8}100%{transform:translateY(-280px) scaleX(1.5);opacity:0}}
+.waves{position:absolute;inset:auto 0 -1px 0;height:clamp(110px,24vh,230px);z-index:4;pointer-events:none}
+.waves svg{position:absolute;bottom:0;left:0;width:200%;height:100%;animation:drift linear infinite}
+.waves svg:nth-child(1){fill:rgba(244,235,221,.13);animation-duration:30s;bottom:34%}
+.waves svg:nth-child(2){fill:rgba(244,235,221,.28);animation-duration:21s;animation-direction:reverse;bottom:16%}
+.waves svg:nth-child(3){fill:var(--cream);animation-duration:15s}
+@keyframes drift{to{transform:translateX(-50%)}}
+.cue{position:absolute;left:50%;bottom:calc(clamp(110px,24vh,230px) + 1rem);z-index:5;font:700 .7rem/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:.7rem;transform:translateX(-50%)}
+.cue::after{content:"";width:1px;height:46px;background:currentColor;transform-origin:top;animation:cue 2s ease-in-out infinite}
+@keyframes cue{0%{transform:scaleY(0)}60%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
+.by{position:absolute;left:clamp(1rem,4vw,2.5rem);bottom:calc(clamp(110px,24vh,230px) + 1rem);z-index:5;font:500 .75rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;opacity:.8}
+
+/* concepto */
+.concept-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,6vw,5rem);align-items:start;margin-top:3rem}
+.lead{font:400 clamp(1.3rem,2.3vw,1.8rem)/1.45 var(--serif);font-variation-settings:'opsz' 72}
+.collage{position:sticky;top:20vh;aspect-ratio:1;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.collage .ico{color:var(--ac)}
+.collage .ico:nth-child(even){color:var(--fg);transform:translateY(2rem)}
+.ico svg{width:100%;height:auto;overflow:visible}
+.ingredients{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:0 3rem;counter-reset:ing;margin-top:1rem}
+.ingredients li{counter-increment:ing;display:flex;gap:1rem;padding:1.1rem 0;border-bottom:1.5px dashed rgba(58,36,24,.35)}
+.ingredients li::before{content:counter(ing);font:700 2rem/1 var(--hand);color:var(--ac);min-width:1.6rem}
+.principle{margin-top:5rem;padding:clamp(2rem,5vw,4rem);background:var(--earth);color:var(--cream);border-radius:2rem;position:relative}
+.principle .hand{font-size:1.9rem;display:block;margin-bottom:.8rem;color:var(--yellow)}
+.principle p{font:400 italic clamp(1.4rem,2.8vw,2.2rem)/1.35 var(--serif);font-variation-settings:'opsz' 72}
+
+/* plates (horizontal) */
+#plates{padding:0;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+.track{display:flex;align-items:center;gap:clamp(2rem,6vw,6rem);padding:0 clamp(2rem,8vw,7rem);width:max-content}
+.intro-plate{width:min(80vw,520px);flex:none}
+.intro-plate p{margin-top:1.4rem;max-width:30rem;opacity:.85}
+.plate{flex:none;width:min(84vw,380px);text-decoration:none;display:block}
+.disc{position:relative;width:min(42vh,340px);aspect-ratio:1;border-radius:50%;background:var(--pc);color:var(--pf);display:grid;place-items:center;margin-bottom:1.6rem;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.plate:hover .disc{transform:scale(1.06) rotate(-3deg)}
+.disc .ring{position:absolute;inset:-14px;border-radius:50%;border:2px dashed var(--pc);opacity:.7}
+.disc .ico{width:48%}
+.disc .n{position:absolute;top:6%;left:50%;transform:translateX(-50%);font:700 2.2rem/1 var(--hand)}
+.plate h3{font-size:1.9rem;margin-bottom:.5rem}
+.plate p{font-size:.98rem;opacity:.85;max-width:22rem}
+.plate .go{font:700 .75rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;display:inline-block;margin-top:1rem;color:var(--pc)}
+
+/* stories */
+.story .grid{display:grid;grid-template-columns:5fr 7fr;gap:clamp(2rem,6vw,6rem);align-items:start}
+.story aside.sticky{position:sticky;top:18vh}
+.story .num{font:700 clamp(5rem,13vw,11rem)/.8 var(--hand);color:var(--ac);display:block;margin-bottom:1rem}
+.story aside .ico{width:clamp(90px,12vw,150px);margin:1.5rem 0 1.8rem;color:var(--ac)}
+.story h2{font-size:clamp(2.2rem,4.6vw,4rem)}
+.eje{font:700 .8rem/1.5 var(--sans);letter-spacing:.14em;text-transform:uppercase;margin:1.4rem 0 1rem;opacity:.85}
+.premisa{font:italic 400 clamp(1.25rem,2.1vw,1.7rem)/1.35 var(--serif);color:var(--ac)}
+.story .body h3.lab:first-child{margin-top:0}
+.steps{list-style:none;position:relative;padding-left:2.2rem}
+.steps::before{content:"";position:absolute;left:7px;top:.4rem;bottom:.4rem;width:2px;background:currentColor;opacity:.25}
+.steps li{position:relative;padding:0 0 1.6rem}
+.steps li::before{content:"";position:absolute;left:-2.2rem;top:.45rem;width:16px;height:16px;border-radius:50%;background:var(--bg);border:2px solid var(--ac)}
+.steps b{display:block;font:700 .78rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--ac);margin-bottom:.4rem}
+.qs h4{font:500 1.05rem/1.3 var(--serif);margin:1.6rem 0 .9rem;opacity:.9;font-style:italic}
+.qs h4:first-child{margin-top:0}
+.notes{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1rem}
+.note{background:var(--paper);color:var(--earth);padding:1.1rem 1.2rem 1.3rem;border-radius:.35rem;font:700 1.45rem/1.2 var(--hand);box-shadow:0 8px 20px rgba(0,0,0,.2);transform:rotate(var(--r,-1.2deg));transition:transform .3s;position:relative}
+.note:nth-child(even){--r:1.4deg}.note:nth-child(3n){--r:-.4deg}
+.note:hover{transform:rotate(0) scale(1.04);z-index:2}
+.note::before{content:"";position:absolute;top:-9px;left:50%;width:54px;height:18px;background:var(--ac);opacity:.75;transform:translateX(-50%) rotate(-2deg)}
+.big{font:400 clamp(1.25rem,2.2vw,1.7rem)/1.4 var(--serif);font-variation-settings:'opsz' 72}
+.nota{margin-top:2.6rem;padding:1.3rem 1.5rem;border:2px dashed var(--ac);border-radius:1rem;font-size:.98rem}
+.nota b{display:block;font:700 1.5rem/1 var(--hand);color:var(--ac);margin-bottom:.5rem}
+
+/* estructura */
+.rows{margin-top:3rem;position:relative;padding-left:clamp(3rem,8vw,6rem)}
+.rail{position:absolute;left:clamp(.9rem,2.5vw,2rem);top:0;bottom:0;width:3px;background:rgba(244,235,221,.18)}
+.rail i{display:block;width:100%;height:100%;background:linear-gradient(var(--yellow),var(--achiote));transform-origin:top;transform:scaleY(0)}
+.flame{position:absolute;left:clamp(.9rem,2.5vw,2rem);top:0;width:22px;height:30px;transform:translate(-50%,-50%);background:radial-gradient(ellipse at 50% 75%,#fff 0,var(--yellow) 30%,var(--achiote) 65%,transparent 72%);filter:blur(1px) drop-shadow(0 0 10px var(--achiote));border-radius:50% 50% 50% 50%/65% 65% 35% 35%;animation:flick .25s infinite alternate}
+@keyframes flick{to{transform:translate(-50%,-52%) scale(1.08,.94)}}
+.row{display:grid;grid-template-columns:auto 1fr;gap:1.5rem 2.5rem;padding:2rem 0;border-bottom:1px solid rgba(244,235,221,.15);opacity:.35;transition:opacity .6s}
+.row.on{opacity:1}
+.row .n{font:700 clamp(3.5rem,8vw,6.5rem)/.8 var(--hand);color:var(--yellow)}
+.row h3{font-size:clamp(1.6rem,3vw,2.4rem);margin-bottom:.4rem}
+.after{margin-top:2.5rem;font:italic 400 clamp(1.15rem,2vw,1.5rem)/1.45 var(--serif);max-width:46rem}
+
+/* calendario */
+.tide{width:100%;height:70px;margin:2.5rem 0 1rem;overflow:visible}
+.tide path{fill:none;stroke:var(--ac);stroke-width:3;stroke-linecap:round}
+.days{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.day{background:rgba(14,59,67,.07);border:1.5px solid rgba(14,59,67,.25);border-radius:1.4rem;padding:1.4rem 1.5rem 1.6rem;animation:bob 6s ease-in-out infinite;animation-delay:calc(var(--i)*-.8s);transition:background .3s,color .3s}
+.day:hover{background:var(--sea);color:var(--cream)}
+.day .d{font:700 3.2rem/1 var(--hand);color:var(--ac)}
+.day .d small{font:700 .72rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;margin-left:.4rem;color:inherit}
+.day p{font-size:.97rem;line-height:1.55;margin-top:.5rem}
+@keyframes bob{50%{transform:translateY(-7px)}}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);margin-top:3.5rem}
+ul.tick{list-style:none}
+ul.tick li{padding:.55rem 0 .55rem 2rem;position:relative}
+ul.tick li::before{content:"";position:absolute;left:0;top:1.05rem;width:.9rem;height:.9rem;border-radius:50%;background:var(--ac)}
+
+/* tratamiento */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.2rem;margin-top:3rem}
+.card{border:1.5px solid rgba(244,235,221,.25);border-radius:1.6rem;padding:1.8rem 1.8rem 2rem;background:rgba(255,255,255,.03)}
+.card h3{font-size:1.7rem;margin-bottom:.8rem}
+.card.wide{grid-column:1/-1;background:var(--sea);border-color:transparent}
+.wave{display:flex;gap:4px;align-items:center;height:60px;margin:1.2rem 0}
+.wave i{flex:1;max-width:8px;border-radius:4px;background:var(--ac);height:var(--h);animation:eq2 1.4s ease-in-out infinite;animation-delay:calc(var(--k)*-.07s)}
+@keyframes eq2{50%{transform:scaleY(.25)}}
+.try{display:flex;flex-wrap:wrap;gap:.7rem;margin:1.2rem 0 0}
+.try button{font:700 .78rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--cream);background:transparent;border:1.5px solid var(--cream);border-radius:99px;padding:.8rem 1.3rem;cursor:pointer;transition:all .25s}
+.try button:hover,.try button[aria-pressed=true]{background:var(--yellow);border-color:var(--yellow);color:#000}
+.cols{columns:2;column-gap:3rem}
+.cols li{break-inside:avoid}
+
+/* entregables */
+.stat{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin:3rem 0}
+.stat div{border-top:3px solid var(--ac);padding-top:1rem}
+.stat b{display:block;font:700 clamp(3.5rem,7vw,6rem)/1 var(--hand);color:var(--ac)}
+.stat span{font-size:.98rem;display:block;line-height:1.4}
+.whale{margin-top:2.6rem;padding:1.8rem 2rem;border-radius:1.6rem;background:var(--sea);color:var(--cream)}
+.whale h3{font-size:1.7rem;margin-bottom:.8rem}
+.whale p{opacity:.92}
+
+/* fuentes + pendientes */
+.src{list-style:none}
+.src li{padding:1.2rem 0;border-bottom:1px solid rgba(244,235,221,.18)}
+.src a{font:600 1.15rem/1.3 var(--serif);text-decoration:none;display:inline-block;border-bottom:2px solid var(--ac)}
+.src a:hover{color:var(--ac)}
+.src small{display:block;font-size:.8rem;opacity:.6;margin:.2rem 0}
+.src p{font-size:.95rem;opacity:.85;margin:.2rem 0 0}
+
+/* cierre */
+#cierre{background:#000;overflow:hidden;text-align:center}
+.table{margin:3.5rem auto 4rem;max-width:1000px;padding:2.5rem 1rem 1.5rem;border-radius:1.6rem;background:linear-gradient(180deg,#5b3a28,#3e2619);display:flex;flex-wrap:wrap;gap:1.2rem;justify-content:center;box-shadow:0 30px 60px rgba(0,0,0,.5)}
+.dish{width:clamp(100px,16vw,150px);aspect-ratio:1;border-radius:50%;background:var(--pc);color:var(--pf);display:grid;place-items:center;box-shadow:inset 0 0 0 6px rgba(255,255,255,.14),0 10px 18px rgba(0,0,0,.35)}
+.dish .ico{width:50%}
+.closing{max-width:46rem;margin-inline:auto;text-align:left}
+.closing p{font-size:1.1rem}
+.closing p:last-child{font:italic 400 clamp(1.4rem,2.6vw,2rem)/1.35 var(--serif);color:var(--yellow);margin-top:2rem}
+.badge{width:clamp(130px,16vw,190px);height:auto;margin:4.5rem auto 1rem}
+footer{font:500 .72rem/1.6 var(--sans);letter-spacing:.14em;text-transform:uppercase;opacity:.6;margin-top:1rem}
+
+@media (max-width:900px){
+ .concept-grid,.story .grid,.two{grid-template-columns:1fr}
+ .collage{position:static;max-width:380px}
+ .story aside.sticky{position:static}
+ .ingredients,.days{grid-template-columns:1fr}
+ .stat{grid-template-columns:1fr 1fr}
+ #plates{display:block;padding:5rem 0;overflow:visible}
+ .track{flex-direction:column;align-items:flex-start;width:auto;gap:3rem}
+ .cols{columns:1}
+ .row{grid-template-columns:1fr}
+ .dsk,.cue{display:none}
+ #hero{padding-bottom:17rem}
+ .disc{width:min(42vh,340px,72vw)}
+ #snd .lbl{display:none}#snd{padding:.65rem .8rem}
+}
+@media (prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation:none!important;transition:none!important}
+ html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<div id="fuse"></div><div id="ember"></div>
+
+<header class="bar dark" id="bar">
+  <a class="logo" href="#hero" aria-label="Fora Visual — inicio"><img src="assets/web/fora-visual.png" alt="Fora Visual" width="900" height="76"></a>
+  <button id="snd" type="button" aria-pressed="false" aria-label="Activar sonido ambiente">
+    <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span><span class="lbl">Sonido ambiente</span>
+  </button>
+</header>
+<div id="hint">¡Prueba el sonido ambiente!</div>
+
+<main>
+
+<!-- HERO -->
+<section id="hero" data-tone="dark" data-sound="sea:.55,fire:0,rain:0" style="--bg:#0E3B43;--fg:#F4EBDD">
+  <div class="sun" aria-hidden="true"></div>
+  <div class="steam" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="wrap">
+    <p class="eyebrow">Propuesta creativa y de producción audiovisual para Lucy Klinger</p>
+    <h1 aria-label="Nuquí, sabores que cuentan historias">
+      <span class="l split">Nuquí,</span>
+      <span class="l split">sabores que cuentan</span>
+      <span class="l split"><em>historias</em></span>
+    </h1>
+    <div class="chips rv">
+      <span>20 – 28 nov 2026</span><span>Serie de cinco cortometrajes documentales</span><span>Cocina · Cultura · Territorio · Turismo responsable</span>
+    </div>
+  </div>
+  <div class="by">Una propuesta de Fora Visual</div>
+  <div class="cue">Desliza</div>
+  <div class="waves" aria-hidden="true">
+    <svg viewBox="0 0 2400 120" preserveAspectRatio="none"><path d="M0 60Q150 20 300 60T600 60T900 60T1200 60T1500 60T1800 60T2100 60T2400 60V120H0Z"/></svg>
+    <svg viewBox="0 0 2400 120" preserveAspectRatio="none"><path d="M0 60Q150 100 300 60T600 60T900 60T1200 60T1500 60T1800 60T2100 60T2400 60V120H0Z"/></svg>
+    <svg viewBox="0 0 2400 120" preserveAspectRatio="none"><path d="M0 70Q150 30 300 70T600 70T900 70T1200 70T1500 70T1800 70T2100 70T2400 70V120H0Z"/></svg>
+  </div>
+</section>
+
+<!-- CONCEPTO -->
+<section id="concepto" data-tone="light" data-sound="sea:.2,fire:.18,rain:0" style="--bg:#F4EBDD;--fg:#3A2418;--ac:#C2461A;--from:#F4EBDD">
+  <div class="wrap">
+    <p class="kicker rv">01 · Concepto general del proyecto</p>
+    <h2 class="split">La cocina como puerta de entrada al territorio</h2>
+    <div class="concept-grid">
+      <div>
+        <p class="lead rv">Nuquí no es solamente un destino de playas, selva y avistamiento de ballenas. Es un territorio habitado por comunidades con historias, conocimientos, oficios, tradiciones culinarias y una relación profunda con su entorno natural.</p>
+        <p class="rv">La propuesta consiste en desarrollar una serie de cinco cortometrajes documentales que descubran ese universo a través de la cocina. La gastronomía será el hilo conductor de todas las historias, conectando los ingredientes, las recetas y las técnicas culinarias con la memoria de las comunidades, la biodiversidad, los saberes ancestrales y las posibilidades de un turismo respetuoso con el territorio.</p>
+        <p class="rv">Cada video tendrá una historia propia, un personaje protagonista y una narrativa cinematográfica. Sin embargo, las cinco piezas compartirán una misma identidad visual y conceptual, construyendo un retrato más amplio de Nuquí a través de sus sabores y de las personas que mantienen viva su cultura.</p>
+        <p class="rv">El propósito no es realizar cinco videos turísticos convencionales, sino contar historias humanas que despierten el interés por conocer el territorio, comprender su cultura y valorar la importancia de conservarlo.</p>
+      </div>
+      <div class="collage" aria-hidden="true">
+        <div class="ico" data-i="coco"></div><div class="ico" data-i="pez"></div>
+        <div class="ico" data-i="platano"></div><div class="ico" data-i="hoja"></div>
+      </div>
+    </div>
+
+    <h3 class="lab" style="margin-top:5rem">Objetivos del proyecto</h3>
+    <ul class="ingredients">
+      <li class="rv">Visibilizar la cultura afrocolombiana y los saberes locales de Nuquí.</li>
+      <li class="rv">Promover la gastronomía como una expresión del patrimonio cultural.</li>
+      <li class="rv">Dar protagonismo a cocineras, pescadores, familias y personas vinculadas a las tradiciones del territorio.</li>
+      <li class="rv">Conectar la biodiversidad con la alimentación, los oficios y la conservación ambiental.</li>
+      <li class="rv">Promover el turismo cultural y gastronómico de una manera responsable.</li>
+      <li class="rv">Mostrar las experiencias que ofrece Nuquí desde una perspectiva auténtica, humana y cinematográfica.</li>
+      <li class="rv">Construir una identidad audiovisual sólida para el proyecto de Lucy Klinger.</li>
+    </ul>
+
+    <div class="principle rv">
+      <span class="hand">Principio creativo</span>
+      <p>La cocina será el punto de encuentro entre las historias humanas, la cultura, la naturaleza y el turismo. Cada pieza debe comenzar con una pregunta o una experiencia que despierte curiosidad y terminar conectando esa historia con un ingrediente, una preparación, una mesa o una experiencia gastronómica.</p>
+    </div>
+  </div>
+</section>
+
+<!-- LAS CINCO HISTORIAS (carrusel horizontal) -->
+<section id="plates" data-tone="dark" data-sound="sea:.25,fire:.25,rain:.2" style="--bg:#2A1A12;--fg:#F4EBDD;--ac:#FCC200;--from:#F4EBDD">
+  <div class="track">
+    <div class="intro-plate">
+      <p class="kicker">02 · Las cinco historias audiovisuales</p>
+      <h2 class="split">Cinco platos, un mismo territorio</h2>
+      <p>Cada pieza tiene su protagonista y su propia luz, pero todas se sirven en la misma mesa. <span class="dsk">Sigue el recorrido hacia la derecha.</span></p>
+    </div>
+    <!-- plates se inyectan por JS -->
+  </div>
+</section>
+
+<!-- HISTORIAS (se inyectan por JS) -->
+<div id="stories"></div>
+
+<!-- ESTRUCTURA NARRATIVA -->
+<section id="estructura" data-tone="dark" data-sound="sea:.1,fire:.55,rain:0" style="--bg:#1B120D;--fg:#F4EBDD;--ac:#FCC200;--from:#4A2F20">
+  <div class="wrap">
+    <p class="kicker">03 · Estructura narrativa común</p>
+    <h2 class="split">Cinco pasos que mantienen el fuego encendido</h2>
+    <p class="rv" style="margin-top:1.6rem;max-width:42rem">Aunque cada video tendrá su propia historia, se recomienda trabajar con una estructura compartida que le dé unidad a la serie.</p>
+    <div class="rows" id="rows">
+      <div class="rail"><i></i></div><div class="flame"></div>
+      <div class="row"><span class="n">1</span><div><h3>El gancho</h3><p>Una pregunta, una frase del protagonista o una imagen que despierte curiosidad desde los primeros segundos.</p></div></div>
+      <div class="row"><span class="n">2</span><div><h3>El encuentro</h3><p>Conocemos a la persona protagonista, su historia y su relación con Nuquí.</p></div></div>
+      <div class="row"><span class="n">3</span><div><h3>La experiencia</h3><p>Acompañamos una actividad real, un oficio, una práctica o un recorrido relacionado con el tema del video.</p></div></div>
+      <div class="row"><span class="n">4</span><div><h3>La cocina</h3><p>El relato desemboca en un ingrediente, una receta, una técnica o una mesa compartida.</p></div></div>
+      <div class="row"><span class="n">5</span><div><h3>El cierre</h3><p>Una reflexión o invitación conecta la historia con la cultura, la conservación del territorio y el turismo responsable.</p></div></div>
+    </div>
+    <p class="after rv">La gastronomía no debe aparecer únicamente al final como una recompensa visual. Debe estar presente desde el comienzo, ya sea a través de un ingrediente, un recuerdo, una pregunta o una preparación.</p>
+  </div>
+</section>
+
+<!-- CALENDARIO -->
+<section id="calendario" data-tone="light" data-sound="sea:.45,fire:0,rain:0" style="--bg:#F4EBDD;--fg:#0E3B43;--ac:#C2461A;--from:#1B120D">
+  <div class="wrap">
+    <p class="kicker">04 · Calendario preliminar de rodaje</p>
+    <h2 class="split">Nueve días entre mareas</h2>
+    <p class="rv" style="margin-top:1.6rem;max-width:44rem">Fechas previstas: del 20 al 28 de noviembre de 2026. El periodo contempla nueve fechas de calendario contando ambos extremos. Si la llegada se realiza el 20 y la salida el 28, será necesario confirmar los horarios de transporte para determinar cuántas jornadas completas de rodaje estarán disponibles.</p>
+    <svg class="tide" viewBox="0 0 1200 70" preserveAspectRatio="none" aria-hidden="true"><path id="tidep" d="M0 35Q75 0 150 35T300 35T450 35T600 35T750 35T900 35T1050 35T1200 35"/></svg>
+    <div class="days" id="days"></div>
+
+    <div class="two">
+      <div>
+        <h3 class="lab" style="margin-top:0">Estrategia de producción</h3>
+        <p>La programación es preliminar y deberá ajustarse a las condiciones climáticas, las mareas, las actividades de los protagonistas y los desplazamientos en lancha.</p>
+        <p>Se recomienda organizar las jornadas por localización y disponibilidad de los personajes, en lugar de rodar cada video de principio a fin. Esto permitirá aprovechar una misma jornada para registrar imágenes que sirvan a varias piezas.</p>
+        <p>La prioridad será garantizar que cada historia tenga suficiente material humano, gastronómico y ambiental para funcionar por sí sola.</p>
+      </div>
+      <div>
+        <h3 class="lab" style="margin-top:0">Cada jornada captura</h3>
+        <ul class="tick">
+          <li>Entrevistas principales y conversaciones espontáneas.</li>
+          <li>Planos generales del entorno y la comunidad.</li>
+          <li>Retratos de los protagonistas.</li>
+          <li>Detalles de ingredientes y utensilios.</li>
+          <li>Procesos completos de preparación de los platos.</li>
+          <li>Sonidos ambientales y sonidos directos de la cocina.</li>
+          <li>Planos de transición y recursos visuales para el montaje.</li>
+          <li>Tomas adicionales que permitan construir aperturas y cierres narrativos.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRATAMIENTO VISUAL Y SONORO -->
+<section id="tratamiento" data-tone="dark" data-sound="sea:.35,fire:.3,rain:.3" style="--bg:#0B2B30;--fg:#F4EBDD;--ac:#FCC200;--from:#F4EBDD">
+  <div class="wrap">
+    <p class="kicker">05 · Tratamiento visual y sonoro</p>
+    <h2 class="split">Mirar despacio, escuchar con atención</h2>
+    <div class="cards">
+      <article class="card rv">
+        <h3>Fotografía</h3>
+        <p>Se propone una estética documental cinematográfica, con luz natural siempre que sea posible, colores orgánicos, texturas, pieles reales y movimientos de cámara que acompañen la acción.</p>
+        <p>El tratamiento visual debe evitar una representación folclórica o excesivamente publicitaria del territorio. La intención es mostrar Nuquí desde la cotidianidad de sus habitantes, permitiendo que las imágenes transmitan la riqueza del lugar sin perder autenticidad.</p>
+      </article>
+      <article class="card rv">
+        <h3>Cámara y composición</h3>
+        <p>La serie combinará:</p>
+        <ul class="tick">
+          <li>Planos generales de playas, selva, ríos y espacios habitados.</li>
+          <li>Planos medios de las entrevistas y las actividades cotidianas.</li>
+          <li>Primeros planos de las manos, los ingredientes y las técnicas culinarias.</li>
+          <li>Retratos íntimos de los protagonistas.</li>
+          <li>Planos de seguimiento durante recorridos y actividades.</li>
+          <li>Detalles de la preparación y presentación de los platos.</li>
+          <li>Planos de transición que conecten el territorio con la cocina.</li>
+        </ul>
+        <p style="margin-top:1rem">El movimiento de cámara debe tener una intención narrativa. No es necesario que cada plano sea espectacular; también deben existir momentos de quietud que permitan observar a los personajes y escuchar sus historias.</p>
+      </article>
+      <article class="card wide rv">
+        <h3>Sonido</h3>
+        <p>El sonido será uno de los elementos distintivos de la serie. Se recomienda registrar de manera dedicada:</p>
+        <ul class="tick cols">
+          <li>El mar y el movimiento del agua.</li>
+          <li>La lluvia y el ambiente natural.</li>
+          <li>El fuego y los utensilios de cocina.</li>
+          <li>El rallado del coco y la preparación de los ingredientes.</li>
+          <li>Las conversaciones y las voces de los protagonistas.</li>
+          <li>Los sonidos de los espacios de trabajo y de la vida cotidiana.</li>
+        </ul>
+        <div class="wave" id="wave" aria-hidden="true"></div>
+        <p>Estos registros pueden convertirse en una identidad sonora común para los cinco videos.</p>
+        <p class="hand" style="font-size:1.5rem;margin-top:1.2rem">Pruébalo — así podría sonar la serie:</p>
+        <div class="try">
+          <button type="button" data-pv="sea" aria-pressed="false">Mar</button>
+          <button type="button" data-pv="fire" aria-pressed="false">Fuego de cocina</button>
+          <button type="button" data-pv="rain" aria-pressed="false">Lluvia</button>
+        </div>
+        <p style="font-size:.85rem;opacity:.65;margin-top:.9rem">Sonidos sintetizados como boceto. En el rodaje se registrarán los sonidos reales del territorio.</p>
+      </article>
+      <article class="card rv">
+        <h3>Música</h3>
+        <p>La propuesta musical debe dialogar respetuosamente con las expresiones culturales del Pacífico. Si se utilizan composiciones, interpretaciones o grabaciones de músicos locales, deberán acordarse los permisos, los créditos y las condiciones de uso.</p>
+        <p>La música debe acompañar la narración sin reemplazar las voces de los protagonistas ni convertir sus historias en una representación estereotipada.</p>
+      </article>
+      <article class="card rv">
+        <h3>Montaje</h3>
+        <p>Cada pieza tendrá un ritmo propio, pero las cinco compartirán:</p>
+        <ul class="tick">
+          <li>Una identidad gráfica común.</li>
+          <li>Un tratamiento de color coherente.</li>
+          <li>Una estructura narrativa reconocible.</li>
+          <li>Un sistema de títulos y créditos.</li>
+          <li>Un enfoque sonoro consistente.</li>
+          <li>Un cierre que conecte la historia con la cultura, la gastronomía y el turismo responsable.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ENTREGABLES + CRITERIOS -->
+<section id="criterios" data-tone="light" data-sound="sea:.15,fire:0,rain:.12" style="--bg:#E9DDC4;--fg:#2A1A12;--ac:#C2461A;--from:#0B2B30">
+  <div class="wrap">
+    <p class="kicker">06 · Formatos de entrega propuestos</p>
+    <h2 class="split">Lo que llevamos a casa</h2>
+    <div class="stat">
+      <div class="rv"><b data-n="5">5</b><span>Cortometrajes documentales de entre 2 y 4 minutos.</span></div>
+      <div class="rv"><b data-n="5">5</b><span>Adaptaciones verticales de entre 45 y 90 segundos para redes sociales.</span></div>
+      <div class="rv"><b>+</b><span>Una selección de clips breves para publicaciones y promoción.</span></div>
+      <div class="rv"><b>+</b><span>Fotografías y fotogramas seleccionados para difusión digital.</span></div>
+    </div>
+    <p class="rv" style="max-width:44rem;opacity:.85">Las duraciones y cantidades son orientativas y deberán ajustarse al presupuesto, los canales de publicación y las necesidades del proyecto de Lucy Klinger.</p>
+
+    <p class="kicker" style="margin-top:6rem">07 · Criterios culturales y ambientales</p>
+    <h2 class="split">Contar desde el respeto</h2>
+    <p class="rv" style="margin-top:1.6rem;max-width:44rem">El proyecto debe desarrollarse desde el respeto por las personas, sus conocimientos y su territorio. Se tendrán en cuenta los siguientes criterios:</p>
+    <ul class="tick cols" style="margin-top:1.6rem">
+      <li class="rv">Consultar a los protagonistas sobre cómo desean contar sus historias.</li>
+      <li class="rv">Reconocer los saberes locales y atribuirlos correctamente.</li>
+      <li class="rv">Obtener autorización para las entrevistas, las imágenes y el uso de las voces.</li>
+      <li class="rv">Acordar condiciones justas de participación con cocineras, pescadores y otros protagonistas.</li>
+      <li class="rv">Evitar presentar una sola receta o comunidad como representación de todo el Pacífico colombiano.</li>
+      <li class="rv">Respetar los tiempos, las prácticas y las actividades cotidianas de las personas participantes.</li>
+      <li class="rv">Evitar actividades de pesca, recolección o acceso a ecosistemas que puedan causar daños.</li>
+      <li class="rv">Verificar las normas y condiciones locales para cualquier actividad de avistamiento de fauna.</li>
+      <li class="rv">No depender del avistamiento de ballenas como requisito para completar la serie.</li>
+      <li class="rv">Contrastar las afirmaciones sobre conservación con fuentes confiables y testimonios pertinentes.</li>
+    </ul>
+    <div class="whale rv">
+      <h3>Consideración sobre el avistamiento de ballenas</h3>
+      <p>Noviembre se encuentra cerca del final de la temporada habitual de ballenas jorobadas en esta región del Pacífico colombiano. Por eso, aunque el océano y su relación con las comunidades pueden formar parte de la identidad visual y narrativa de la serie, no conviene prometer avistamientos ni organizar el rodaje alrededor de ellos.</p>
+      <p>Si las condiciones permiten registrar esta experiencia, deberá realizarse de acuerdo con las recomendaciones y las normas vigentes para el avistamiento responsable de fauna.</p>
+      <p>La ausencia de ballenas no debe afectar la propuesta narrativa, porque el centro del proyecto seguirá siendo la relación entre cocina, cultura, comunidad y territorio.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FUENTES + PENDIENTES -->
+<section id="pendientes" data-tone="dark" data-sound="sea:.3,fire:.1,rain:0" style="--bg:#0E3B43;--fg:#F4EBDD;--ac:#FCC200;--from:#E9DDC4">
+  <div class="wrap" style="max-width:52rem">
+    <div>
+      <p class="kicker">08 · Fuentes para profundizar</p>
+      <h2 class="split" style="font-size:clamp(2rem,4vw,3.2rem)">Dónde empieza la investigación</h2>
+      <p class="rv" style="margin:1.4rem 0 1rem;opacity:.85">Estas referencias constituyen un punto de partida para documentar la gastronomía, la cultura y el contexto ambiental antes de desarrollar los guiones definitivos.</p>
+      <ul class="src">
+        <li class="rv"><a href="https://colombia.travel/es/encanto/planes-en-nuqui-10-platos-en-la-gastronomia-chocoana" target="_blank" rel="noopener">Colombia Travel — Nuquí y gastronomía chocoana</a><small>colombia.travel</small><p>Referencia para explorar preparaciones gastronómicas regionales e ingredientes asociados a la cocina del Chocó.</p></li>
+        <li class="rv"><a href="https://colombia.travel/es/nuqui" target="_blank" rel="noopener">Colombia Travel — Nuquí</a><small>colombia.travel</small><p>Información general sobre el destino, su entorno natural y las experiencias turísticas que ofrece.</p></li>
+        <li class="rv"><a href="https://patrimonio.mincultura.gov.co/Paginas/Cocinas.aspx" target="_blank" rel="noopener">Ministerio de Cultura — Cocinas tradicionales de Colombia</a><small>patrimonio.mincultura.gov.co</small><p>Marco de referencia para comprender la cocina tradicional como una expresión del patrimonio cultural, los conocimientos y la identidad de las comunidades.</p></li>
+        <li class="rv"><a href="https://www.minambiente.gov.co/asuntos-marinos-costeros-y-recursos-acuaticos/manglares/" target="_blank" rel="noopener">Ministerio de Ambiente — Manglares</a><small>minambiente.gov.co</small><p>Información de contexto para investigar la importancia de los manglares y su relación con los ecosistemas costeros.</p></li>
+        <li class="rv"><a href="https://www.parquesnacionales.gov.co/" target="_blank" rel="noopener">Parques Nacionales Naturales de Colombia</a><small>parquesnacionales.gov.co</small><p>Fuente institucional para consultar información sobre conservación, biodiversidad y recomendaciones relacionadas con actividades en entornos naturales.</p></li>
+      </ul>
+      <p class="rv" style="font-size:.92rem;opacity:.7;margin-top:1.4rem">Estas fuentes orientan la investigación, pero las recetas, las historias personales, la disponibilidad de las experiencias y las condiciones actuales de rodaje deberán confirmarse con las personas y las comunidades participantes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CIERRE -->
+<section id="cierre" data-tone="dark" data-sound="sea:.3,fire:.2,rain:0" style="--bg:#000;--fg:#EFEEEC;--ac:#FCC200;--from:#0E3B43">
+  <div class="wrap">
+    <p class="kicker">Conclusión</p>
+    <h2 class="split">Una mesa compartida</h2>
+    <div class="table" id="table"></div>
+    <div class="closing">
+      <p class="rv">Nuquí, sabores que cuentan historias propone descubrir el territorio a través de las personas que lo habitan y de los conocimientos que mantienen viva su cultura gastronómica.</p>
+      <p class="rv">Los cinco cortometrajes construirán una narrativa que conecte la memoria, la pesca artesanal, la biodiversidad, la transmisión de saberes y la hospitalidad con una misma idea: la cocina es una puerta de entrada para comprender la relación entre una comunidad y su territorio.</p>
+      <p class="rv">El propósito final es producir contenidos audiovisuales que emocionen, informen y despierten el deseo de conocer Nuquí, promoviendo un turismo que valore la cultura, respete el entorno natural y reconozca a las comunidades como protagonistas de sus propias historias.</p>
+      <p class="rv">La propuesta no busca mostrar únicamente qué se come en Nuquí, sino descubrir quiénes están detrás de sus sabores, qué historias cuentan sus recetas y por qué vale la pena conservar el territorio que las hace posibles.</p>
+    </div>
+    <img class="badge rv" src="assets/web/fora-badge.png" alt="Fora Visual" width="700" height="738">
+    <footer>Propuesta creativa para Lucy Klinger · Fora Visual · Nuquí, 20 – 28 de noviembre de 2026</footer>
+  </div>
+</section>
+
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+
+/* ---------- Iconos de línea (ingredientes) ---------- */
+const P=d=>`<path d="${d}" pathLength="1"/>`, C=(x,y,r)=>`<circle cx="${x}" cy="${y}" r="${r}" pathLength="1"/>`;
+const ICONS={
+  coco:C(60,64,40)+C(50,54,4)+C(70,54,4)+C(60,70,4)+P('M36 42Q46 30 60 28'),
+  pez:P('M14 60Q44 24 82 48L108 30L100 60L108 90L82 72Q44 96 14 60Z')+C(36,56,3)+P('M52 44Q58 60 52 76'),
+  hoja:P('M20 100Q14 40 60 18Q104 40 96 84Q60 108 20 100Z')+P('M20 100Q54 66 88 36')+P('M42 80L34 64M58 66L56 46M70 54L84 54'),
+  olla:P('M24 56H96V84Q96 100 80 100H40Q24 100 24 84Z')+P('M18 56H102')+P('M24 66H12V76H24M96 66H108V76H96')+P('M46 44Q40 34 46 26Q52 18 46 10M70 44Q64 34 70 26Q76 18 70 10'),
+  plato:C(50,60,40)+C(50,60,24)+P('M104 18V48M98 18V38Q98 48 104 48Q110 48 110 38V18M104 48V102'),
+  platano:P('M18 38Q28 104 98 98Q112 96 110 86Q64 94 42 40Q36 26 22 32Z')+P('M20 34L14 22')+P('M44 52Q70 88 104 88')
+};
+const paintIcons=(r=document)=>$$('[data-i]',r).forEach(e=>{e.innerHTML=`<svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[e.dataset.i]}</svg>`});
+
+/* ---------- Contenido de las 5 historias ---------- */
+const STORIES=[
+{id:'v1',n:'01',icon:'coco',title:'El sabor de la memoria',eje:'Gastronomía, identidad y memoria oral',premisa:'Hay recetas que conservan historias que nunca se escribieron.',
+ bg:'#C2461A',fg:'#FFF4E6',ac:'#FCC200',pc:'#C2461A',pf:'#FFF4E6',tone:'dark',sound:'sea:.1,fire:.55,rain:0',
+ concepto:['La primera pieza estará dedicada a una cocinera de Nuquí y a la historia que existe detrás de una preparación significativa para ella, su familia o su comunidad.','La intención es entrar en su cocina y descubrir mucho más que una receta. Queremos conocer quién le enseñó a cocinar, qué recuerdos conserva, cuáles son los ingredientes que considera fundamentales y qué significa para ella mantener vivas las tradiciones gastronómicas de su territorio.','La cocina será el escenario principal. Los ingredientes, los utensilios, el fuego, las manos y los sonidos cotidianos acompañarán una narración construida a partir de la experiencia real de la protagonista.','No se trata de una entrevista tradicional acompañada de imágenes de comida. La historia debe desarrollarse mientras la cocinera prepara el plato, permitiendo que los recuerdos aparezcan de manera natural durante el proceso.'],
+ pasos:[['Inicio','Sonidos de la cocina, primeros planos de los ingredientes, manos trabajando y detalles de la preparación. La protagonista puede abrir la historia con una frase relacionada con su infancia, su familia o el origen de la receta.'],['Desarrollo','Mientras cocina, cuenta quién le enseñó, cómo aprendió las técnicas y cuáles son los recuerdos que relaciona con ese plato. La cámara observa el proceso sin interrumpir innecesariamente la actividad.'],['Clímax','La preparación llega a su punto final. El relato conecta el sabor con la memoria familiar y la importancia de transmitir estos conocimientos.'],['Cierre','El plato se sirve y la protagonista reflexiona sobre aquello que quisiera que las nuevas generaciones conservaran de su cocina.']],
+ preguntas:[['Preguntas para la protagonista',['¿Quién te enseñó a cocinar?','¿Qué plato te recuerda a tu infancia?','¿Cuál es la receta que más representa tu historia?','¿Qué ingredientes nunca pueden faltar en tu cocina?','¿Qué recuerdas de las personas que te enseñaron?','¿Qué te gustaría que las nuevas generaciones aprendieran de tu cocina?','¿Qué significa para ti mantener viva esta tradición?']]],
+ visual:['Primeros planos de las manos, texturas de los ingredientes, rallado del coco, preparación de las hierbas, fuego, vapor, utensilios y detalles del plato terminado.','La fotografía debe sentirse íntima, cálida y natural, evitando una puesta en escena excesivamente publicitaria.'],
+ desenlace:'El plato se convierte en una representación de la memoria y de los conocimientos que pasan de una generación a otra.',
+ turistico:'Invitar a conocer Nuquí a través de sus cocineras, sus recetas y las historias que forman parte de su identidad cultural.'},
+{id:'v2',n:'02',icon:'pez',title:'Del mar a la mesa',eje:'Pesca artesanal, economía local y alimentación',premisa:'Antes de llegar a la mesa, cada ingrediente tiene una historia.',
+ bg:'#0E3B43',fg:'#F4EBDD',ac:'#8FD6CE',pc:'#2B7C84',pf:'#F4EBDD',tone:'dark',sound:'sea:.7,fire:0,rain:0',
+ concepto:['Esta pieza contará el recorrido de un ingrediente desde su origen hasta su preparación en la cocina.','La historia seguirá a un pescador o pescadora artesanal, mostrando su relación con el mar, sus conocimientos del oficio y la importancia de la pesca para la alimentación y la economía familiar.','Posteriormente, el relato continuará en la cocina, donde una persona transforma el producto en una preparación local.','La intención es conectar dos momentos que muchas veces se muestran por separado: el trabajo de quien obtiene el alimento y el conocimiento de quien lo prepara.','El mar no será solamente un paisaje visual. Será parte de la historia de vida del protagonista y del contexto que hace posible la gastronomía de Nuquí.'],
+ pasos:[['Inicio','Amanecer, sonidos del mar, preparación de los elementos de trabajo y salida de la embarcación, siempre que las condiciones lo permitan.'],['Desarrollo','El pescador cuenta cómo aprendió su oficio, qué conocimientos ha adquirido con los años y cómo se relaciona su trabajo con las temporadas, las condiciones del mar y las necesidades de su familia.'],['Transición','El producto llega a tierra y comienza una segunda historia, la de su preparación en la cocina.'],['Clímax','Observamos cómo el ingrediente se transforma en un plato y cómo se conectan los conocimientos de las personas que participan en ese proceso.'],['Cierre','El protagonista reflexiona sobre la importancia del mar y de las actividades que sostienen la alimentación de su comunidad.']],
+ preguntas:[['Preguntas para el pescador o pescadora',['¿Cómo aprendiste a pescar?','¿Quién te enseñó este oficio?','¿Qué has aprendido del mar con los años?','¿Cómo ha cambiado tu trabajo?','¿Qué significa la pesca para tu familia?','¿Qué condiciones hacen que una jornada de pesca sea buena o difícil?','¿Qué consideras importante para que este oficio pueda mantenerse en el futuro?']],['Preguntas para la persona que cocina',['¿Cómo eliges el pescado que vas a preparar?','¿Qué preparaciones tradicionales se hacen con este producto?','¿Qué técnicas son importantes para conseguir el sabor que buscas?','¿Qué relación encuentras entre la pesca y la cocina de tu comunidad?']]],
+ visual:['Planos generales del litoral, detalles de las embarcaciones, manos preparando los elementos de trabajo, texturas del mar, retratos del pescador y una transición visual hacia la cocina.','El montaje debe permitir sentir que el ingrediente conecta dos mundos que forman parte de una misma historia.'],
+ desenlace:'El pescado llega a la mesa y el espectador comprende que detrás de un plato existen conocimientos, trabajo, familias y una relación cotidiana con el territorio.',
+ turistico:'Invitar a los visitantes a reconocer la pesca artesanal como parte de la cultura local y a comprender mejor el origen de los alimentos que consumen.',
+ nota:['Consideración de producción','La faena dependerá del clima, la disponibilidad y las prácticas responsables de pesca. No se deben provocar capturas ni alterar las actividades de los protagonistas para conseguir una escena.']},
+{id:'v3',n:'03',icon:'hoja',title:'La despensa de la selva',eje:'Biodiversidad, ingredientes y conservación del territorio',premisa:'Una parte de la identidad de Nuquí se descubre en los ingredientes que ofrece y protege su territorio.',
+ bg:'#1F5B3A',fg:'#F4EBDD',ac:'#E9D26A',pc:'#2E8452',pf:'#F4EBDD',tone:'dark',sound:'sea:.1,fire:0,rain:.5',
+ concepto:['Esta pieza explorará la relación entre la naturaleza y la gastronomía a través de los ingredientes que forman parte de la cocina local.','La protagonista podría ser una cocinera, una agricultora o una persona conocedora de las plantas y los productos que se utilizan en las preparaciones tradicionales.','A través de un recorrido autorizado, conoceremos algunos ingredientes, sus usos y la manera en que las personas han aprendido a reconocerlos e incorporarlos a su alimentación.','El coco, el plátano, las hierbas aromáticas y otros productos disponibles localmente pueden ser puntos de partida, siempre que los protagonistas confirmen su importancia dentro de la historia que se quiere contar.','La pieza debe conectar la riqueza natural del territorio con la identidad gastronómica, sin convertir la naturaleza en un simple fondo decorativo.'],
+ pasos:[['Inicio','Un recorrido por un jardín, una huerta, un espacio de cultivo o un entorno natural autorizado. La historia comienza con un ingrediente que despierta la curiosidad.'],['Desarrollo','La persona protagonista explica de dónde proviene el producto, cómo aprendió a reconocerlo y de qué manera lo utiliza en la cocina.'],['Transición','El ingrediente llega a la cocina y comienza su transformación.'],['Clímax','La preparación permite entender la relación entre el conocimiento local, los productos disponibles y la gastronomía.'],['Cierre','La protagonista reflexiona sobre la importancia de cuidar los recursos y los conocimientos que permiten mantener vivas esas preparaciones.']],
+ preguntas:[['Preguntas para la protagonista',['¿De dónde vienen los ingredientes que utilizas?','¿Qué plantas o productos aprendiste a reconocer desde pequeña?','¿Quién te enseñó a utilizarlos?','¿Cómo influye el territorio en los sabores de tu cocina?','¿Qué ingredientes han cambiado su disponibilidad con el tiempo?','¿Qué debemos cuidar para que estos saberes y recursos permanezcan?','¿Qué te gustaría que los visitantes entendieran sobre la relación entre naturaleza y gastronomía?']]],
+ visual:['Planos de vegetación, texturas de hojas y frutos, manos seleccionando ingredientes, recorridos por espacios de cultivo, detalles de la preparación y paisajes que conecten con la historia.','La cámara debe construir una relación visual entre el entorno del que proviene el ingrediente y el resultado que llega a la mesa.'],
+ desenlace:'Un ingrediente local termina convertido en una preparación tradicional. El espectador comprende que la biodiversidad y el conocimiento de quienes habitan el territorio forman parte de la identidad culinaria.',
+ turistico:'Mostrar que la naturaleza de Nuquí no es solamente un paisaje para visitar y fotografiar, sino una parte fundamental de su cultura alimentaria.',
+ nota:['Consideración de investigación','Los datos ambientales y las afirmaciones sobre los efectos de la degradación de los ecosistemas deberán verificarse con fuentes confiables y especialistas. Las prácticas de recolección y acceso a los espacios naturales deben realizarse con autorización y sin causar daños.']},
+{id:'v4',n:'04',icon:'olla',title:'Lo que se hereda en la cocina',eje:'Familia, tradición y transmisión de conocimientos',premisa:'Una tradición sigue viva cuando alguien decide compartirla.',
+ bg:'#FCC200',fg:'#2A1A12',ac:'#C2461A',pc:'#FCC200',pf:'#2A1A12',tone:'light',sound:'sea:.1,fire:.4,rain:0',
+ concepto:['Esta pieza explorará la transmisión de los conocimientos culinarios entre generaciones.','Buscaremos una historia entre una cocinera experimentada y una hija, un hijo, una nieta o una persona joven de su comunidad.','Durante la preparación de una receta, veremos cómo se transmite el conocimiento. La historia se construirá a partir de las instrucciones, las correcciones, los recuerdos, las diferencias y las conversaciones espontáneas que surjan entre los protagonistas.','El objetivo es mostrar que una receta no se conserva únicamente por sus ingredientes, sino también por las personas que la enseñan, la interpretan y deciden continuar preparándola.'],
+ pasos:[['Inicio','La persona mayor prepara los ingredientes y explica qué van a cocinar. La persona joven participa y comienza a seguir sus instrucciones.'],['Desarrollo','Mientras avanzan, aparecen recuerdos familiares y relatos sobre cómo se aprendió la receta.'],['Clímax','La persona joven intenta realizar una técnica o completar una parte importante de la preparación. La interacción entre ambos personajes revela sus conocimientos y su relación.'],['Cierre','Comparten el plato y hablan sobre lo que significa conservar una tradición.']],
+ preguntas:[['Preguntas para la persona mayor',['¿Qué aprendiste de tu madre, tu abuela o tu familia?','¿Qué receta no quisieras que se perdiera?','¿Cómo aprendiste a prepararla?','¿Qué recuerdos tienes de cocinar con tu familia?','¿Qué ha cambiado en la manera de cocinar?']],['Preguntas para la persona joven',['¿Qué has aprendido de esta persona?','¿Qué significa para ti conocer estas recetas?','¿Hay alguna preparación que quieras seguir haciendo cuando seas mayor?','¿Qué te gustaría enseñarle a la próxima generación?']]],
+ visual:['Retratos íntimos, planos de las manos de ambas generaciones, detalles de los ingredientes, intercambios espontáneos, miradas y momentos de complicidad.','La cámara debe observar la relación entre los personajes y permitir que la historia aparezca de manera natural.'],
+ desenlace:'Las dos generaciones comparten la preparación terminada y expresan qué significa mantener vivo ese conocimiento.',
+ turistico:'Invitar a conocer la dimensión humana de la gastronomía y reconocer a las familias que preservan las tradiciones del territorio.'},
+{id:'v5',n:'05',icon:'plato',title:'Nuquí se sirve en la mesa',eje:'Turismo cultural, hospitalidad y experiencias comunitarias',premisa:'Conocer un territorio también significa sentarse a escuchar a las personas que lo habitan.',
+ bg:'#4A2F20',fg:'#F4EBDD',ac:'#FCC200',pc:'#7A4A30',pf:'#F4EBDD',tone:'dark',sound:'sea:.2,fire:.3,rain:.1',
+ concepto:['Esta será la pieza que reúna el universo de los cuatro videos anteriores.','La propuesta consiste en construir una experiencia gastronómica compartida con anfitriones locales, cocineras y otros protagonistas de la serie.','La preparación de una comida permitirá descubrir sabores, relatos, costumbres y formas de vida que hacen parte de Nuquí. La historia debe transmitir la sensación de estar participando en una experiencia real, no en una actividad turística artificialmente organizada para la cámara.','Esta pieza tendrá una vocación promocional más clara, pero mantendrá el tratamiento documental y humano del resto de la serie.'],
+ pasos:[['Inicio','Llegada al espacio donde se desarrollará la experiencia. Conocemos a los anfitriones y descubrimos qué van a preparar.'],['Desarrollo','Acompañamos la selección de ingredientes y la preparación de los alimentos. Durante el proceso, los personajes hablan sobre su comunidad, sus costumbres y las experiencias que desean compartir con los visitantes.'],['Clímax','La comida está lista y los participantes se reúnen alrededor de la mesa. La conversación conecta la gastronomía con la hospitalidad y el territorio.'],['Cierre','Los anfitriones invitan a conocer Nuquí desde la cultura, la cocina y el respeto por la comunidad.']],
+ preguntas:[['Preguntas para los anfitriones',['¿Qué debería conocer alguien que visita Nuquí por primera vez?','¿Qué experiencia local quisieras compartir con los visitantes?','¿Qué historia del territorio te gustaría que más personas conocieran?','¿Cómo puede el turismo apoyar a las familias y los emprendimientos locales?','¿Qué significa para ustedes recibir a alguien en su territorio?','¿Qué te gustaría que una persona se llevara después de visitar Nuquí?']]],
+ visual:['Planos generales del espacio, retratos de los anfitriones, preparación colectiva, detalles de los ingredientes, conversaciones alrededor de la mesa y planos finales del plato compartido.','La fotografía debe transmitir hospitalidad y autenticidad, evitando una estética de comercial turístico genérico.'],
+ desenlace:'Una mesa compartida reúne las voces, los sabores y las experiencias de la serie. La invitación final será descubrir Nuquí a través de su cultura y su gastronomía.',
+ turistico:'Convertir esta pieza en el contenido principal de promoción del proyecto, destacando las experiencias que ofrecen los anfitriones locales y la importancia de un turismo que reconozca y respete el territorio.'}
+];
+
+const DAYS=[['20','Llegada, reconocimiento del territorio, reuniones de producción y coordinación de permisos.'],['21','Rodaje de cocina y entrevista para El sabor de la memoria.'],['22','Pesca artesanal y recorrido del ingrediente para Del mar a la mesa, sujeto a las condiciones reales.'],['23','Ingredientes locales, huertas, paisaje y conservación para La despensa de la selva.'],['24','Rodaje de la historia intergeneracional para Lo que se hereda en la cocina.'],['25','Experiencia gastronómica y comunitaria para Nuquí se sirve en la mesa.'],['26','Entrevistas complementarias, recursos visuales y grabación de sonidos ambientales.'],['27','Tomas faltantes, detalles gastronómicos, planos de apoyo y cierres narrativos.'],['28','Salida, según los horarios de transporte.']];
+
+/* ---------- Render ---------- */
+const PREV=['#2A1A12','#C2461A','#0E3B43','#1F5B3A','#FCC200'];
+$('#stories').innerHTML=STORIES.map((s,i)=>`
+<section class="story" id="${s.id}" data-tone="${s.tone}" data-sound="${s.sound}" style="--bg:${s.bg};--fg:${s.fg};--ac:${s.ac};--from:${PREV[i]}">
+ <div class="wrap grid">
+  <aside class="sticky">
+   <span class="num">${s.n}</span>
+   <h2 class="split">${s.title}</h2>
+   <div class="ico" data-i="${s.icon}"></div>
+   <p class="eje">${s.eje}</p>
+   <p class="premisa">${s.premisa}</p>
+  </aside>
+  <div class="body">
+   <h3 class="lab">Concepto</h3>
+   ${s.concepto.map(p=>`<p class="rv">${p}</p>`).join('')}
+   <h3 class="lab">Desarrollo narrativo</h3>
+   <ol class="steps">${s.pasos.map(([a,b])=>`<li class="rv"><b>${a}</b>${b}</li>`).join('')}</ol>
+   <h3 class="lab">Preguntas</h3>
+   <div class="qs">${s.preguntas.map(([h,l])=>`<h4>${h}</h4><div class="notes">${l.map(q=>`<div class="note rv">${q}</div>`).join('')}</div>`).join('')}</div>
+   <h3 class="lab">Tratamiento visual</h3>
+   ${s.visual.map(p=>`<p class="rv">${p}</p>`).join('')}
+   <h3 class="lab">Desenlace narrativo</h3>
+   <p class="big rv">${s.desenlace}</p>
+   <h3 class="lab">Enfoque turístico</h3>
+   <p class="rv">${s.turistico}</p>
+   ${s.nota?`<div class="nota rv"><b>${s.nota[0]}</b>${s.nota[1]}</div>`:''}
+  </div>
+ </div>
+</section>`).join('');
+
+$('.track').insertAdjacentHTML('beforeend',STORIES.map(s=>`
+<a class="plate" href="#${s.id}" style="--pc:${s.pc};--pf:${s.pf}">
+ <div class="disc"><span class="ring"></span><span class="n">${s.n}</span><div class="ico" data-i="${s.icon}"></div></div>
+ <h3>${s.title}</h3><p>${s.premisa}</p><span class="go">Ver historia →</span>
+</a>`).join(''));
+
+$('#days').innerHTML=DAYS.map(([d,t],i)=>`<div class="day rv" style="--i:${i}"><div class="d">${d}<small>nov</small></div><p>${t}</p></div>`).join('');
+$('#table').innerHTML=STORIES.map(s=>`<div class="dish" style="--pc:${s.pc};--pf:${s.pf}"><div class="ico" data-i="${s.icon}"></div></div>`).join('');
+$('#wave').innerHTML=Array.from({length:64},(_,k)=>`<i style="--k:${k};--h:${20+Math.abs(Math.sin(k*.55)*70+Math.sin(k*1.7)*20)}%"></i>`).join('');
+paintIcons();
+
+/* ---------- Sonido ambiente (sintetizado con Web Audio) ---------- */
+const Snd=(()=>{
+  let ctx,master,g={},on=false,timer,mix={sea:.55,fire:0,rain:0},pin=null,white;
+  const lvl=()=>pin?{sea:0,fire:0,rain:0,[pin]:.9}:mix;
+  const apply=()=>{if(!ctx)return;const L=lvl();for(const k in g)g[k].gain.setTargetAtTime(L[k]||0,ctx.currentTime,.9)};
+  const buf=brown=>{const n=ctx.sampleRate*3,b=ctx.createBuffer(1,n,ctx.sampleRate),d=b.getChannelData(0);let last=0;for(let i=0;i<n;i++){const w=Math.random()*2-1;if(brown){last=(last+.02*w)/1.02;d[i]=last*3.2}else d[i]=w*.5}return b};
+  const loop=b=>{const s=ctx.createBufferSource();s.buffer=b;s.loop=true;s.start();return s};
+  const filt=(t,f)=>{const n=ctx.createBiquadFilter();n.type=t;n.frequency.value=f;return n};
+  const lfo=(f,amt,target)=>{const o=ctx.createOscillator(),a=ctx.createGain();o.frequency.value=f;a.gain.value=amt;o.connect(a).connect(target);o.start()};
+  const build=()=>{
+    ctx=new(window.AudioContext||window.webkitAudioContext)();
+    master=ctx.createGain();master.gain.value=0;master.connect(ctx.destination);
+    for(const k of['sea','fire','rain']){g[k]=ctx.createGain();g[k].gain.value=0;g[k].connect(master)}
+    white=buf(false);const brown=buf(true);
+    const sw=ctx.createGain();sw.gain.value=.5;loop(white).connect(filt('lowpass',650)).connect(sw).connect(g.sea);
+    lfo(.09,.35,sw.gain);lfo(.21,.12,sw.gain);                       // oleaje
+    loop(brown).connect(filt('lowpass',260)).connect(g.fire);        // brasas
+    loop(white).connect(filt('highpass',900)).connect(filt('lowpass',9000)).connect(g.rain); // lluvia
+  };
+  const pop=()=>{ if(!on)return;                                      // chasquidos del fuego
+    const s=ctx.createBufferSource(),e=ctx.createGain(),t=ctx.currentTime;
+    s.buffer=white;e.gain.setValueAtTime(0,t);e.gain.linearRampToValueAtTime(.25+Math.random()*.75,t+.002);
+    e.gain.exponentialRampToValueAtTime(.001,t+.02+Math.random()*.05);
+    s.connect(filt('highpass',1800+Math.random()*2600)).connect(e).connect(g.fire);s.start(t,Math.random()*2);s.stop(t+.12);
+    timer=setTimeout(pop,40+Math.random()*320)};
+  const set=on_=>{ if(on_===on)return; if(!ctx)build(); if(ctx.state==='suspended')ctx.resume(); on=on_;
+    master.gain.setTargetAtTime(on?.8:0,ctx.currentTime,.4);
+    $('#snd').setAttribute('aria-pressed',on);$('#hint').style.opacity=0;
+    if(on){apply();pop()}else clearTimeout(timer)};
+  return{
+    toggle:()=>set(!on), on:()=>set(true),
+    mix:m=>{mix={sea:0,fire:0,rain:0,...m};apply()},
+    preview:k=>{pin=pin===k?null:k;apply();return pin}
+  };
+})();
+$('#snd').onclick=Snd.toggle;
+setTimeout(()=>{$('#hint').style.opacity=0},9000);
+$$('[data-pv]').forEach(b=>b.onclick=()=>{Snd.on();const p=Snd.preview(b.dataset.pv);$$('[data-pv]').forEach(x=>x.setAttribute('aria-pressed',x.dataset.pv===p))});
+
+/* ---------- Texto partido en palabras ---------- */
+const split=el=>{
+  const walk=n=>{[...n.childNodes].forEach(c=>{
+    if(c.nodeType===3){const f=document.createDocumentFragment();c.textContent.split(/(\s+)/).forEach(t=>{if(!t.trim()){f.append(t);return}
+      const w=document.createElement('span');w.className='w';w.innerHTML=`<span>${t}</span>`;f.append(w)});c.replaceWith(f)}
+    else walk(c)})};
+  walk(el)};
+$$('.split').forEach(split);
+
+/* ---------- Tono del header + mezcla de sonido según la sección (siempre activo) ---------- */
+if(window.gsap&&window.ScrollTrigger){
+gsap.registerPlugin(ScrollTrigger);
+const parse=s=>Object.fromEntries(s.split(',').map(p=>p.split(':')).map(([k,v])=>[k,+v]));
+$$('section[data-tone]').forEach(s=>ScrollTrigger.create({trigger:s,start:'top 50px',end:'bottom 50px',
+  onToggle:t=>{if(!t.isActive)return;$('#bar').className='bar '+s.dataset.tone;Snd.mix(parse(s.dataset.sound||'sea:.3'))}}));
+
+/* mecha de progreso */
+ScrollTrigger.create({start:0,end:'max',onUpdate:t=>{const p=t.progress*100+'%';$('#fuse').style.width=p;$('#ember').style.left=p}});
+
+/* ---------- Animaciones ---------- */
+const mm=gsap.matchMedia();
+mm.add('(prefers-reduced-motion: no-preference)',()=>{
+  // titulares
+  $$('.split').forEach(el=>{
+    const inner=$$('.w>span',el);
+    gsap.set(inner,{yPercent:115,rotate:4});
+    const go=()=>gsap.to(inner,{yPercent:0,rotate:0,duration:1.1,ease:'power4.out',stagger:.07});
+    el.closest('#hero')?gsap.delayedCall(.3,go):ScrollTrigger.create({trigger:el,start:'top 85%',once:true,onEnter:go});
+  });
+  // revelado general
+  gsap.set('.rv',{autoAlpha:0,y:36});
+  ScrollTrigger.batch('.rv',{start:'top 92%',once:true,batchMax:5,interval:.1,onEnter:b=>gsap.to(b,{autoAlpha:1,y:0,duration:.8,ease:'power3.out',stagger:.06})});
+  // hero: amanecer y paralaje
+  gsap.from('.sun',{yPercent:90,duration:3,ease:'power2.out',delay:.2});
+  gsap.to('.sun',{yPercent:-60,ease:'none',scrollTrigger:{trigger:'#hero',start:'top top',end:'bottom top',scrub:true}});
+  gsap.to('#hero .wrap',{yPercent:-12,opacity:.2,ease:'none',scrollTrigger:{trigger:'#hero',start:'top top',end:'bottom top',scrub:true}});
+  // iconos que se dibujan solos
+  $$('.ico').forEach(ic=>{
+    const strokes=$$('path,circle',ic);
+    gsap.set(strokes,{strokeDasharray:1,strokeDashoffset:1});
+    gsap.to(strokes,{strokeDashoffset:0,ease:'none',stagger:.15,scrollTrigger:{trigger:ic,start:'top 90%',end:'top 35%',scrub:.6}});
+  });
+  gsap.to('.collage .ico',{y:i=>i%2?-40:50,ease:'none',scrollTrigger:{trigger:'.collage',start:'top bottom',end:'bottom top',scrub:true}});
+  // estructura: la mecha se enciende
+  gsap.to('.rail i',{scaleY:1,ease:'none',scrollTrigger:{trigger:'#rows',start:'top 60%',end:'bottom 60%',scrub:true}});
+  gsap.to('.flame',{top:()=>$('#rows').offsetHeight,ease:'none',scrollTrigger:{trigger:'#rows',start:'top 60%',end:'bottom 60%',scrub:true,invalidateOnRefresh:true}});
+  $$('.row').forEach(r=>ScrollTrigger.create({trigger:r,start:'top 65%',onEnter:()=>r.classList.add('on'),onLeaveBack:()=>r.classList.remove('on')}));
+  // marea que se dibuja
+  const tp=$('#tidep');gsap.set(tp,{strokeDasharray:1,strokeDashoffset:1});tp.setAttribute('pathLength',1);
+  gsap.to(tp,{strokeDashoffset:0,ease:'none',scrollTrigger:{trigger:'#calendario',start:'top 50%',end:'top 10%',scrub:true}});
+  // cifras
+  $$('[data-n]').forEach(b=>{const n=+b.dataset.n,o={v:0};ScrollTrigger.create({trigger:b,start:'top 90%',once:true,onEnter:()=>gsap.to(o,{v:n,duration:1.2,ease:'power2.out',snap:{v:1},onUpdate:()=>b.textContent=o.v})})});
+  // la mesa se pone
+  gsap.from('.dish',{y:()=>-innerHeight*.7,rotation:()=>gsap.utils.random(-140,140),autoAlpha:0,duration:1.2,ease:'bounce.out',stagger:.14,scrollTrigger:{trigger:'#table',start:'top 75%',once:true}});
+});
+
+/* carrusel horizontal fijado (solo escritorio) */
+mm.add('(min-width:901px) and (prefers-reduced-motion: no-preference)',()=>{
+  const tr=$('.track'),dist=()=>tr.scrollWidth-document.documentElement.clientWidth;
+  const tl=gsap.timeline({defaults:{ease:'none'},scrollTrigger:{trigger:'#plates',start:'top top',end:()=>'+='+dist(),pin:true,scrub:.7,invalidateOnRefresh:true}});
+  tl.to(tr,{x:()=>-dist()},0).to('.ring',{rotation:360},0);
+});
+
+addEventListener('load',()=>{ScrollTrigger.refresh()});
+document.fonts&&document.fonts.ready.then(()=>ScrollTrigger.refresh());
+}
+</script>
+</body>
+</html>
