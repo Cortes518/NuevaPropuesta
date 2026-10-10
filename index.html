@@ -6,6 +6,8 @@
 <title>Nuquí, sabores que cuentan historias · Fora Visual</title>
 <meta name="description" content="Propuesta creativa y de producción audiovisual para Lucy Klinger: cinco cortometrajes documentales sobre la cocina, la cultura y el territorio de Nuquí.">
 <link rel="icon" href="assets/web/icon.png">
+<link rel="preload" as="image" href="img/web/p09.jpg">
+<script>if(!matchMedia("(prefers-reduced-motion:reduce)").matches)document.documentElement.classList.add("mo")</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=DM+Sans:wght@400;500;700&family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800&display=swap" rel="stylesheet">
@@ -76,6 +78,27 @@ header.bar.light .logo img{filter:invert(1)}
 @keyframes cue{0%{transform:scaleY(0)}60%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
 .by{position:absolute;left:clamp(1rem,4vw,2.5rem);bottom:calc(clamp(110px,24vh,230px) + 1rem);z-index:5;font:500 .75rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;opacity:.8}
 
+/* fotos */
+figure.ph{position:relative;overflow:hidden;border-radius:1.2rem;background:rgba(0,0,0,.15)}
+figure.ph img{width:100%;height:100%;object-fit:cover;display:block}
+figure.ph figcaption{position:absolute;left:.8rem;bottom:.6rem;font:500 .7rem/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.7)}
+.gal{display:grid;grid-template-columns:repeat(6,1fr);gap:.9rem;margin:2.2rem 0 .5rem}
+.gal figure{aspect-ratio:4/3;grid-column:span var(--s)}
+.gal figure:first-child{grid-column:1/-1;aspect-ratio:16/10}
+.band{aspect-ratio:21/9;margin-top:4.5rem}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin:0 0 1.6rem}
+.duo figure{aspect-ratio:4/3}
+.card figure.ph{aspect-ratio:16/10;margin-bottom:1.3rem}
+/* revelado inicial */
+#reveal{padding:0;height:100vh;overflow:hidden;background:#000;color:#F4EBDD}
+#reveal .reveal-img{position:absolute;inset:0;border-radius:0;height:auto}
+.reveal-img img{object-position:68% 30%;transform-origin:70% 38%}
+.mo .reveal-img{clip-path:circle(0% at 70% 38%)}
+.reveal-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.78))}
+.reveal-pre{position:absolute;inset:0;display:grid;place-content:center;text-align:center;font:700 clamp(2.4rem,7vw,5.5rem)/1.05 var(--hand);color:var(--yellow);pointer-events:none}
+.reveal-txt{position:absolute;left:0;right:0;bottom:clamp(2rem,9vh,5rem);z-index:2}
+.reveal-txt h2{font-size:clamp(2rem,5vw,4.2rem);max-width:15ch;margin-top:.4rem}
+.reveal-txt .hand{font-size:clamp(1.6rem,3vw,2.4rem)}
 /* concepto */
 .concept-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,6vw,5rem);align-items:start;margin-top:3rem}
 .lead{font:400 clamp(1.3rem,2.3vw,1.8rem)/1.45 var(--serif);font-variation-settings:'opsz' 72}
@@ -200,6 +223,8 @@ ul.tick li::before{content:"";position:absolute;left:0;top:1.05rem;width:.9rem;h
 footer{font:500 .72rem/1.6 var(--sans);letter-spacing:.14em;text-transform:uppercase;opacity:.6;margin-top:1rem}
 
 @media (max-width:900px){
+ .band{aspect-ratio:4/3}
+ .duo{grid-template-columns:1fr}
  .concept-grid,.story .grid,.two{grid-template-columns:1fr}
  .collage{position:static;max-width:380px}
  .story aside.sticky{position:static}
@@ -258,8 +283,15 @@ footer{font:500 .72rem/1.6 var(--sans);letter-spacing:.14em;text-transform:upper
   </div>
 </section>
 
+<!-- REVELADO -->
+<section id="reveal" data-tone="dark" data-sound="sea:.4,fire:.15,rain:0" style="--bg:#000;--fg:#F4EBDD;--ac:#FCC200;--from:#F4EBDD">
+  <figure class="ph reveal-img"><img src="img/web/p09.jpg" alt="Retrato de una mujer sonriente con un collar de chaquiras de colores" width="2000" height="1333"></figure>
+  <p class="reveal-pre">Antes de empezar,<br>una mirada.</p>
+  <div class="reveal-txt"><div class="wrap"><p class="hand">Nuquí tiene rostro</p><h2>Detrás de cada sabor hay una persona.</h2></div></div>
+</section>
+
 <!-- CONCEPTO -->
-<section id="concepto" data-tone="light" data-sound="sea:.2,fire:.18,rain:0" style="--bg:#F4EBDD;--fg:#3A2418;--ac:#C2461A;--from:#F4EBDD">
+<section id="concepto" data-tone="light" data-sound="sea:.2,fire:.18,rain:0" style="--bg:#F4EBDD;--fg:#3A2418;--ac:#C2461A;--from:#000">
   <div class="wrap">
     <p class="kicker rv">01 · Concepto general del proyecto</p>
     <h2 class="split">La cocina como puerta de entrada al territorio</h2>
@@ -275,6 +307,8 @@ footer{font:500 .72rem/1.6 var(--sans);letter-spacing:.14em;text-transform:upper
         <div class="ico" data-i="platano"></div><div class="ico" data-i="hoja"></div>
       </div>
     </div>
+
+    <figure class="ph band"><img src="img/web/p13.avif" alt="Vista aérea de islotes cubiertos de selva en la costa de Nuquí" loading="lazy" decoding="async"></figure>
 
     <h3 class="lab" style="margin-top:5rem">Objetivos del proyecto</h3>
     <ul class="ingredients">
@@ -367,6 +401,7 @@ footer{font:500 .72rem/1.6 var(--sans);letter-spacing:.14em;text-transform:upper
     <h2 class="split">Mirar despacio, escuchar con atención</h2>
     <div class="cards">
       <article class="card rv">
+        <figure class="ph"><img src="img/web/p03.jpg" alt="Retrato en blanco y negro de un niño flotando en el agua con los ojos cerrados" loading="lazy" decoding="async"><figcaption>Foto: Leonel Vásquez</figcaption></figure>
         <h3>Fotografía</h3>
         <p>Se propone una estética documental cinematográfica, con luz natural siempre que sea posible, colores orgánicos, texturas, pieles reales y movimientos de cámara que acompañen la acción.</p>
         <p>El tratamiento visual debe evitar una representación folclórica o excesivamente publicitaria del territorio. La intención es mostrar Nuquí desde la cotidianidad de sus habitantes, permitiendo que las imágenes transmitan la riqueza del lugar sin perder autenticidad.</p>
@@ -456,6 +491,7 @@ footer{font:500 .72rem/1.6 var(--sans);letter-spacing:.14em;text-transform:upper
       <li class="rv">Contrastar las afirmaciones sobre conservación con fuentes confiables y testimonios pertinentes.</li>
     </ul>
     <div class="whale rv">
+      <div class="duo"><figure class="ph"><img src="img/web/p14.jpg" alt="Ballena jorobada saltando fuera del agua" loading="lazy" decoding="async"></figure><figure class="ph"><img src="img/web/p11.jpg" alt="Aleta de una ballena jorobada sobre el mar" loading="lazy" decoding="async"></figure></div>
       <h3>Consideración sobre el avistamiento de ballenas</h3>
       <p>Noviembre se encuentra cerca del final de la temporada habitual de ballenas jorobadas en esta región del Pacífico colombiano. Por eso, aunque el océano y su relación con las comunidades pueden formar parte de la identidad visual y narrativa de la serie, no conviene prometer avistamientos ni organizar el rodaje alrededor de ellos.</p>
       <p>Si las condiciones permiten registrar esta experiencia, deberá realizarse de acuerdo con las recomendaciones y las normas vigentes para el avistamiento responsable de fauna.</p>
@@ -568,6 +604,14 @@ const STORIES=[
 const DAYS=[['20','Llegada, reconocimiento del territorio, reuniones de producción y coordinación de permisos.'],['21','Rodaje de cocina y entrevista para El sabor de la memoria.'],['22','Pesca artesanal y recorrido del ingrediente para Del mar a la mesa, sujeto a las condiciones reales.'],['23','Ingredientes locales, huertas, paisaje y conservación para La despensa de la selva.'],['24','Rodaje de la historia intergeneracional para Lo que se hereda en la cocina.'],['25','Experiencia gastronómica y comunitaria para Nuquí se sirve en la mesa.'],['26','Entrevistas complementarias, recursos visuales y grabación de sonidos ambientales.'],['27','Tomas faltantes, detalles gastronómicos, planos de apoyo y cierres narrativos.'],['28','Salida, según los horarios de transporte.']];
 
 /* ---------- Render ---------- */
+const FOTOS={
+  v1:[['p01','Cocinera de Nuquí rallando coco en una cocina de madera']],
+  v2:[['p10','Pescador con camiseta azul en su embarcación, con un pescado a un lado'],['p06','Canoa de madera sobre la playa de arena oscura'],['p08','Mano sosteniendo un langostino frente a una huerta'],['p17','Pez de colores sobre la arena del fondo marino']],
+  v3:[['p16','Racimos de frutos oscuros sobre hojas verdes'],['p05','Frutos rojos y verdes en una rama'],['p04','Palmeras junto a la costa bajo un cielo con nubes']],
+  v4:[['p15','Mujer sosteniendo caña de azúcar junto a un trapiche']],
+  v5:[['p02','Vista aérea de una cabaña con techo verde entre la selva y las palmas'],['p12','Playa de arena dorada con la espuma del mar y la selva'],['p00','Canoa de madera con flores rojas en la orilla']]
+};
+const gal=a=>a?`<div class="gal" style="--s:${6/Math.max(a.length-1,1)}">${a.map(([f,t])=>`<figure class="ph"><img src="img/web/${f}.jpg" alt="${t}" loading="lazy" decoding="async"></figure>`).join('')}</div>`:'';
 const PREV=['#2A1A12','#C2461A','#0E3B43','#1F5B3A','#FCC200'];
 $('#stories').innerHTML=STORIES.map((s,i)=>`
 <section class="story" id="${s.id}" data-tone="${s.tone}" data-sound="${s.sound}" style="--bg:${s.bg};--fg:${s.fg};--ac:${s.ac};--from:${PREV[i]}">
@@ -582,6 +626,7 @@ $('#stories').innerHTML=STORIES.map((s,i)=>`
   <div class="body">
    <h3 class="lab">Concepto</h3>
    ${s.concepto.map(p=>`<p class="rv">${p}</p>`).join('')}
+   ${gal(FOTOS[s.id])}
    <h3 class="lab">Desarrollo narrativo</h3>
    <ol class="steps">${s.pasos.map(([a,b])=>`<li class="rv"><b>${a}</b>${b}</li>`).join('')}</ol>
    <h3 class="lab">Preguntas</h3>
@@ -656,6 +701,7 @@ const split=el=>{
   walk(el)};
 $$('.split').forEach(split);
 
+if(!(window.gsap&&window.ScrollTrigger))document.documentElement.classList.remove('mo');
 /* ---------- Tono del header + mezcla de sonido según la sección (siempre activo) ---------- */
 if(window.gsap&&window.ScrollTrigger){
 gsap.registerPlugin(ScrollTrigger);
@@ -699,6 +745,19 @@ mm.add('(prefers-reduced-motion: no-preference)',()=>{
   gsap.to(tp,{strokeDashoffset:0,ease:'none',scrollTrigger:{trigger:'#calendario',start:'top 50%',end:'top 10%',scrub:true}});
   // cifras
   $$('[data-n]').forEach(b=>{const n=+b.dataset.n,o={v:0};ScrollTrigger.create({trigger:b,start:'top 90%',once:true,onEnter:()=>gsap.to(o,{v:n,duration:1.2,ease:'power2.out',snap:{v:1},onUpdate:()=>b.textContent=o.v})})});
+  // fotos: marco que se abre + paralaje interno
+  $$('figure.ph:not(.reveal-img)').forEach(fig=>{
+    const img=$('img',fig);
+    gsap.fromTo(fig,{clipPath:'inset(10% 7% 10% 7% round 1.2rem)'},{clipPath:'inset(0% 0% 0% 0% round 1.2rem)',ease:'none',scrollTrigger:{trigger:fig,start:'top 95%',end:'top 55%',scrub:true}});
+    gsap.fromTo(img,{yPercent:-7,scale:1.16},{yPercent:7,ease:'none',scrollTrigger:{trigger:fig,start:'top bottom',end:'bottom top',scrub:true}});
+  });
+  // revelado: el círculo (plato) se abre sobre el retrato inicial
+  gsap.set('.reveal-img img',{scale:1.35});
+  gsap.timeline({defaults:{ease:'none'},scrollTrigger:{trigger:'#reveal',start:'top top',end:'+=140%',pin:true,scrub:.7}})
+    .to('.reveal-pre',{autoAlpha:0,y:-30,duration:.25},0)
+    .to('.reveal-img',{clipPath:'circle(140% at 70% 38%)',duration:1,ease:'power2.inOut'},.12)
+    .to('.reveal-img img',{scale:1,duration:1},.12)
+    .fromTo('.reveal-txt',{autoAlpha:0,y:40},{autoAlpha:1,y:0,duration:.35},.8);
   // la mesa se pone
   gsap.from('.dish',{y:()=>-innerHeight*.7,rotation:()=>gsap.utils.random(-140,140),autoAlpha:0,duration:1.2,ease:'bounce.out',stagger:.14,scrollTrigger:{trigger:'#table',start:'top 75%',once:true}});
 });
